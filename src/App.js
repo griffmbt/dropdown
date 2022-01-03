@@ -4,21 +4,24 @@ import MenuItem from "./components/MenuItem";
 
 function App() {
   const items = [
-    { label: "Moscow", value: 1 },
-    { label: "London", value: 2 },
-    { label: "Helsinki", value: 3 },
-    { label: "Rome", value: 4 },
-    { label: "Oslo", value: 5 },
+    { language: "Русский", id: 1 },
+    { language: "Английский", id: 2 },
+    { language: "Испанский", id: 3 },
+    { language: "Немецкий", id: 4 },
+    { language: "Итальянский", id: 5 },
+    { language: "Польский", id: 6 }
   ];
 
   return (
     <div className="App">
       <Dropdown label="Выберите язык из списка">
+      
         {items.map((item) => (
-          <MenuItem key={item.value} value={item}>
-            {item.label}
+          <MenuItem key={item.id} value={item}>
+            {item.language}
           </MenuItem>
         ))}
+
       </Dropdown>
     </div>
   );
