@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Dropdown from "./components/Dropdown";
+import MenuItem from "./components/MenuItem";
 
 function App() {
+  const items = [
+    { label: "Moscow", value: 1 },
+    { label: "London", value: 2 },
+    { label: "Helsinki", value: 3 },
+    { label: "Rome", value: 4 },
+    { label: "Oslo", value: 5 },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dropdown label="Выберите язык из списка">
+        {items.map((item) => (
+          <MenuItem key={item.value} value={item}>
+            {item.label}
+          </MenuItem>
+        ))}
+      </Dropdown>
     </div>
   );
 }
