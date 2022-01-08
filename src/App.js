@@ -3,25 +3,23 @@ import Dropdown from "./components/Dropdown";
 import MenuItem from "./components/MenuItem";
 
 function App() {
-  const items = [
-    { language: "Русский", id: 1 },
-    { language: "Английский", id: 2 },
-    { language: "Испанский", id: 3 },
-    { language: "Немецкий", id: 4 },
-    { language: "Итальянский", id: 5 },
-    { language: "Польский", id: 6 }
+  const countries = [
+    { language: "Русский", id: 1, src: "/img/ru.png" },
+    { language: "Английский", id: 2, src: "/img/brit.png" },
+    { language: "Испанский", id: 3, src: "/img/spain.png" },
+    { language: "Немецкий", id: 4, src: "/img/germ.png" },
+    { language: "Итальянский", id: 5, src: "/img/italy.png" },
+    { language: "Польский", id: 6, src: "/img/poland.png" },
   ];
 
   return (
     <div className="App">
-      <Dropdown label="Выберите язык из списка">
-      
-        {items.map((item) => (
-          <MenuItem key={item.id} value={item}>
-            {item.language}
+      <Dropdown>
+        {countries.map((country) => (
+          <MenuItem key={country.id} value={country} src={country.src}>
+            {country.language}
           </MenuItem>
         ))}
-
       </Dropdown>
     </div>
   );

@@ -1,14 +1,22 @@
 import React from "react";
 import classes from "./MenuItem.module.css";
 
-function MenuItem(props) {
-    const { active, disabled, children, ...rest } = props;
+const MenuItem = (props) => {
+  const { active, disabled, children, src, ...rest } = props;
 
-    return (
-        <div {...rest} disabled={disabled} active={active}>
-            {props.children}
-        </div>
-    )
-}
+  return (
+    <div {...rest} disabled={disabled} active={active} className={classes.menuItem}>
+      <div>
+        <img src={src} />
+        <span>
+          {props.children}
+        </span>
+        
+      </div>
+      
+      <input type="checkbox" />
+    </div>
+  );
+};
 
 export default MenuItem;

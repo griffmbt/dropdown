@@ -11,16 +11,19 @@
 }
 
 .searchButton {
-  width: 400px;
+  width: 80%;
   height: 40px;
-  border: 1px solid black;
-  background: none;
+  border: 1px solid #C1C1C1;
+  border-radius: 10px;
+  background: #FFFFFF;
   cursor: pointer;
 }
 
 .menu {
-  margin: 1px 0 0;
+  width: 80%;
+  margin: 10px 0 0 0;
   border: 1px solid #bebebe;
   max-height: 400px;
   overflow-y: auto;
+  border-radius: 10px;
 }
